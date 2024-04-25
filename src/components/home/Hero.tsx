@@ -15,44 +15,29 @@ const linesOfText = [
 
 const Hero: NextPage = () => {
   return (
-    <div className="sm:h-[60vh] flex flex-col md:flex-row items-center justify-center">
-      <div className="flex-1 flex-row items-center justify-center px-4 md:px-32 mt-10">
-        <h2 className="text-wrap text-6xl leading-tight text-white md:mx-0 lg:text-7xl ">
-          Defragmenting
-          {/* <span className="hidden sm:block"></span> */}
-          <TextSwitcher texts={linesOfText} interval={2000} />
-
-        </h2>
-        {/* <div className="text-gray-400 text-justify font-light text-xl mt-8 max-w-lg space-y-2">
-          <p>Temporal brings unprecedented efficiencies to fixed-income and derivative markets with patent-pending infra</p>
-          <p>• single pool for each asset, generating continuous, market-determined forward-curves</p>
-          <p>• unifying maturity-fragmented liquidity and pricing instruments of any given duration</p>
-          <p>• plug-and-play integration with TradFi and DeFi market venues</p>
-        </div> */}
-        <p className="text-gray-400 text-balance font-light text-xl mt-8 max-w-lg">
-        Patent-pending market infrastructure bringing unprecedented efficiencies to fixed-income and derivatives. Natively for TradFi and DeFi market venues.
-        </p>
-
-
-
-        <Link href="/notify" className={buttonVariants({ variant: "cta" })}>Get Notified  <MoveRight className="h-5 w-5" /></Link>
-
-      </div>
-      <div className="flex-1 flex items-center justify-center relative h-full mt-10 md:mt-0">
-        <div className="relative">
-          <Image
-            className="w-[250px] md:w-[400px] h-auto"
-            src="/Herographic1.png"
-            alt="Temporal Logo"
-            width={400}
-            height={400}
-            sizes="(max-width: 768px) 250px, 400x"
-            priority
-          />
+    <div className="sm:h-[60vh] flex flex-col items-center justify-center">
+      <div className="mx-auto flex flex-col max-w-[70vw] md:flex-row">
+        <div className="text-center md:text-left">
+          <h2 className="flex-col md:flex md:flex-row text-6xl text-white md:mx-0 lg:text-7xl">
+            <div className="md:ml-20">Defragmenting</div>
+            <div className="ml-4 -mt-3">
+              <TextSwitcher texts={linesOfText} interval={2000} />
+            </div>
+          </h2>
+          <p
+            className="mx-4 text-gray-400 font-light text-4xl mt-16 text-left md:text-center "
+          >
+            Patent-pending market infrastructure bringing unprecedented efficiencies to fixed-income and derivatives. Natively for TradFi and DeFi market venues.
+          </p>
         </div>
-      </div>
 
+        
+      </div>
+      <div className="mt-10 flex items-center justify-center md:flex-row md:space-x-4">
+          <Link href="/notify" className={buttonVariants({ variant: "cta" }) }>Get Notified </Link>
+        </div>
     </div>
+
   );
 };
 

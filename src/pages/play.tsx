@@ -46,7 +46,7 @@ const ThankYou: NextPage = () => {
                     <div className="flex flex-col items-center justify-center">
                         <div className="h-full mx-5 relative backdrop-blur-[6px] text-xl rounded-xl p-10"
                             style={{
-                                background: 'radial-gradient(ellipse at center top, rgba(23, 58, 63, 0.45) 10%, rgba(4, 20, 32, 0.2) 100%)',
+                                background: 'radial-gradient(ellipse at center top, rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0.2) 100%)',
                                 boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
                             }}>
                             <h2 className="text-center text-xl text-temporal mb-4">Score: <span className="text-white">{score}</span></h2>
@@ -91,7 +91,7 @@ const ThankYou: NextPage = () => {
                             We&apos;ll reach out soon
                         </h1>
 
-                        <div className="flex flex-col items-center justify-center rounded-xl p-5 bg-gray-300/10">
+                        <div className="flex flex-col items-center justify-center rounded-xl p-5 bg-gray-600/20 backdrop-blur-[4px] mt-10">
                             <Image src="/arrow-keys.svg" width={180} height={180} alt="Arrow Keys Control" />
                             <h1 className="text-white text-center text-2xl mt-8">
                                 Click <span className="text-temporal"> New Game </span> and <br />  use <span className="text-temporal"> Arrow Keys </span> to play
@@ -102,7 +102,7 @@ const ThankYou: NextPage = () => {
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             onClick={(): void => { void (window.location.href = "/"); }}
-                            className="cursor-pointer flex items-center space-x-4 mt-20 mb-4 text-white font-extralight hover:text-[#0ABAB5]"
+                            className="cursor-pointer flex items-center space-x-4 mt-12 mb-4 text-white font-extralight hover:text-[#0ABAB5]"
                         >
                             <Image src={isHovered ? "/arrow-left-circle-hover.svg" : "/arrow-left-circle.svg"} width={24} height={24} alt="Go back" />
                             <span>Go back to Homepage</span>

@@ -14,10 +14,16 @@ export default function Layout({ children }: any) {
                     duration: 1
                 }}
                 className="dark md:overflow-hidden w-full h-screen bg-center bg-no-repeat"
+                // style={{
+                //     background: "rgba(0, 0, 0, 1) no-repeat",
+                //     backgroundSize: 'cover',
+                //     backgroundAttachment: "fixed",
+                // }}
                 style={{
-                    background: "rgba(0, 0, 0, 1) no-repeat",
+                    backgroundImage: `url('/Website-BG.png')`,
                     backgroundSize: 'cover',
                     backgroundAttachment: "fixed",
+                    backgroundRepeat: 'no-repeat'
                 }}
               
                 >
