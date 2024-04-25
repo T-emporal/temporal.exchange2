@@ -16,8 +16,7 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ texts, interval = 2000 }) =
   useEffect(() => {
     const timerId = setInterval(updateCurrentIndex, interval);
     return () => clearInterval(timerId);
-  }, [texts.length, interval]);
-
+  }, [interval]); // Only update timer if the interval changes
 
   const animationVariants = {
     enter: { opacity: 0, y: 30 },
@@ -28,18 +27,20 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ texts, interval = 2000 }) =
   return (
     <div className="relative min-h-[100px]">
       <AnimatePresence mode="wait">
-        <motion.div
-          key={texts[currentIndex]}
-          variants={animationVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.5, ease: 'easeInOut' }} 
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}
-          className="mt-2 md:mt-4 text-temporal font-medium"
-        >
-          {texts[currentIndex]}
-        </motion.div>
+        {texts.map((text, index) => (
+          <motion.div
+            key={index} // Use index as key
+            variants={animationVariants}
+            initial="enter"
+            animate={currentIndex === index ? "center" : "exit"} 
+            exit="exit"
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}
+            className="mt-2 md:mt-4 text-temporal font-medium"
+          >
+            {text}
+          </motion.div>
+        ))}
       </AnimatePresence>
     </div>
   );

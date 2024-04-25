@@ -8,7 +8,7 @@ import Link from "next/link";
 import TextSwitcher from "../basic/TextSwitcher";
 
 const linesOfText = [
-  "Yield Markets",
+  "Yield",
   "Liquidity",
   "Derivatives",
 ];
@@ -19,27 +19,35 @@ const Hero: NextPage = () => {
       <div className="flex-1 flex-row items-center justify-center px-4 md:px-32 mt-10">
         <h2 className="text-wrap text-6xl leading-tight text-white md:mx-0 lg:text-7xl ">
           Defragmenting
-          <span className="hidden sm:block"></span>
+          {/* <span className="hidden sm:block"></span> */}
           <TextSwitcher texts={linesOfText} interval={2000} />
 
         </h2>
-        <p
-          className="text-gray-400 text-balance font-light text-xl mt-12 max-w-lg"
-        >
-          Temporal provides a shared omnichain vAMM. The novel design generates a continuous
-          market-determined yield curve for dApps to optimize their own yield applications.
+        {/* <div className="text-gray-400 text-justify font-light text-xl mt-8 max-w-lg space-y-2">
+          <p>Temporal brings unprecedented efficiencies to fixed-income and derivative markets with patent-pending infra</p>
+          <p>• single pool for each asset, generating continuous, market-determined forward-curves</p>
+          <p>• unifying maturity-fragmented liquidity and pricing instruments of any given duration</p>
+          <p>• plug-and-play integration with TradFi and DeFi market venues</p>
+        </div> */}
+        <p className="text-gray-400 text-balance font-light text-xl mt-8 max-w-lg">
+        Patent-pending market infrastructure bringing unprecedented efficiencies to fixed-income and derivatives. Natively for TradFi and DeFi market venues.
         </p>
 
-        <Link href="/waitlist" className={buttonVariants({ variant: "cta" })}>Join Waitlist  <MoveRight className="h-5 w-5" /></Link>
+
+
+        <Link href="/notify" className={buttonVariants({ variant: "cta" })}>Get Notified  <MoveRight className="h-5 w-5" /></Link>
 
       </div>
-      <div className="flex-1 flex items-center justify-center relative h-full">
-        <div className="max-w-[400px] max-h-[400px] w-full h-full relative">
+      <div className="flex-1 flex items-center justify-center relative h-full mt-10 md:mt-0">
+        <div className="relative">
           <Image
+            className="w-[250px] md:w-[400px] h-auto"
             src="/Herographic1.png"
             alt="Temporal Logo"
-            layout="fill"
-            objectFit="contain"
+            width={400}
+            height={400}
+            sizes="(max-width: 768px) 250px, 400x"
+            priority
           />
         </div>
       </div>

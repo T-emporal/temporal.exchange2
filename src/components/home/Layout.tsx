@@ -18,7 +18,9 @@ export default function Layout({ children }: any) {
                     background: "rgba(0, 0, 0, 1) no-repeat",
                     backgroundSize: 'cover',
                     backgroundAttachment: "fixed",
-                }}>
+                }}
+              
+                >
                 <main>{children}</main>
             </motion.div>
         </>

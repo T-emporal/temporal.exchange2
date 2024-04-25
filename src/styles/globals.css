@@ -74,3 +74,83 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.tetris {
+  display: grid;
+  grid-template-areas:
+    ". controls ."
+    ". game .";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.board {
+  border: none;
+  user-select: none;
+  margin: auto;
+  grid-area: game;
+}
+
+.controls {
+  grid-area: controls;
+}
+
+.row {
+  display: flex;
+}
+
+.upcoming {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cell {
+  width: 30px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 169, 164, 0.3);
+}
+
+.cell.hidden {
+  visibility: hidden;
+}
+
+.cell.Empty {
+  background-color: transparent;
+}
+
+.cell.I {
+  background-color: #7569FF90
+  ;
+}
+
+.cell.J {
+  background-color: #B367CE90
+  ;
+}
+
+.cell.L {
+  background-color: #BA740A90
+  ;
+}
+
+.cell.O {
+  background-color: #0A85BA90
+  ;
+}
+
+.cell.S {
+  background-color: #FCD15490
+  ;
+}
+
+.cell.T {
+  background-color: #FE706590
+  ;
+}
+
+.cell.Z {
+  background-color: #0ABA5B90
+  ;
+}

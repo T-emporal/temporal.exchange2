@@ -16,12 +16,12 @@ export default function NavBar() {
     const isDesktop = useMediaQuery("(min-width: 768px)");
 
     const menuItems = [
-        { id: 1, name: 'Applications', url: '/applications' },
-        { id: 2, name: 'Features', url: '/features' },
-        { id: 3, name: 'Architecture', url: '/architecture' },
+        // { id: 1, name: 'Applications', url: '/applications' },
+        // { id: 2, name: 'Features', url: '/features' },
+        // { id: 3, name: 'Architecture', url: '/architecture' },
         { id: 4, name: 'Litepaper', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4636450' },
-        { id: 5, name: 'Research', url: '/research' },
-        { id: 6, name: 'Docs', url: 'https://docs.temporal.exchange/temporal/v/handbook/' },
+        // { id: 5, name: 'Research', url: '/research' },
+        // { id: 6, name: 'Docs', url: 'https://docs.temporal.exchange/temporal/v/handbook/' },
     ];
 
     return (
@@ -38,11 +38,11 @@ export default function NavBar() {
                 <NavigationMenu>
                     <NavigationMenuList className="gap-4">
                         {menuItems.map((item) => (
-                            <NavigationMenuItem key={item.id} className={`group/${item.id}`}>
+                            <NavigationMenuItem key={item.id} className={``}>
                                 <Link href={item.url} legacyBehavior passHref>
-                                    <NavigationMenuLink className="flex hover:text-temporal text-lg items-center">
+                                    <NavigationMenuLink className={`flex group/${item.name} hover:text-temporal text-lg items-center`}>
                                         {item.name}
-                                        <ArrowUpRight className={`ml-2 opacity-0 group-hover/${item.id}:opacity-100 transition-opacity duration-300`} />
+                                        <ArrowUpRight className={`ml-2 opacity-0 group-hover/${item.name}:opacity-100 transition-opacity duration-300`} />
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
@@ -55,7 +55,8 @@ export default function NavBar() {
                         <DrawerTrigger>
                             <MenuIcon className="text-white" />
                         </DrawerTrigger>
-                        <DrawerContent className="text-white p-4 bg-black gap-6">
+                        <DrawerContent className="text-white px-4 pt-12 bg-black gap-6">
+                        <span className="text-temporal text-3xl "> Temporal</span>
                             {menuItems.map((item) => (
                                 <Link key={item.id} href={item.url} className="text-white text-xl px-4 py-2 hover:text-temporal block">
                                     {item.name}
