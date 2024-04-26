@@ -12,12 +12,14 @@ import XIcon from '@mui/icons-material/X';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
+
+
 const actions = [
-    { icon: <MailIcon />, name: 'Email', url: 'https://Mail.com' },
-    { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://LinkedIn.com' },
-    { icon: <XIcon />, name: 'X (Twitter)', url: 'https://X.com' },
-    { icon: <TelegramIcon />, name: 'Telegram', url: 'https://Telegram.com' },
-    { icon: <YouTubeIcon />, name: 'YouTube', url: 'https://YouTube.com' },
+    { icon: <MailIcon />, name: 'Email', url: 'mailto:hello@temporal.exchange' },
+    { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://www.linkedin.com/company/temporal-exchange' },
+    { icon: <XIcon />, name: 'X (Twitter)', url: 'https://twitter.com/TemporalFinance' },
+    { icon: <YouTubeIcon />, name: 'YouTube', url: 'youtube - https://www.youtube.com/@TemporalFinance' },
+    // { icon: <TelegramIcon />, name: 'Telegram', url: 'https://Telegram.com' },
 ];
 
 const Speedy: NextPage = () => {

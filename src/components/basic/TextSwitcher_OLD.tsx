@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface TextSwitcherProps {
@@ -9,8 +9,6 @@ interface TextSwitcherProps {
 
 const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval = 2000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const textContainerRef = useRef<HTMLDivElement | null>(null); 
-
 
   const updateCurrentIndex = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
@@ -19,15 +17,6 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval
   useEffect(() => {
     let frameId: number;
     let lastTimestamp = 0; 
-
-    // Update Width after Animation:
-    const updateWidth = () => {
-      if (textContainerRef.current) {
-        textContainerRef.current.style.width = 
-            `${textContainerRef.current.scrollWidth}px`;
-      }
-    };
-
   
     const animate = (timestamp: number) => {
       if (!lastTimestamp) lastTimestamp = timestamp; 
@@ -36,8 +25,7 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval
   
       if (progress > interval) {
         updateCurrentIndex();
-        lastTimestamp = timestamp;
-        updateWidth(); // Update width after the text changes
+        lastTimestamp = timestamp; 
       }
   
       frameId = requestAnimationFrame(animate);
@@ -54,8 +42,8 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval
   };
 
   return (
-<div className="flex flex-col items-center text-temporal font-medium md:flex-row" ref={textContainerRef}> 
-  <span className="mr-4 mb-4 md:mb-0 text-white font-medium">{staticText}</span>
+<div className="flex flex-col items-center text-temporal font-medium md:flex-row"> 
+      <span className="mr-4 mb-4 md:mb-0 text-white font-medium">{staticText}</span>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}

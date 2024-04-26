@@ -13,19 +13,18 @@ export default function Layout({ children }: any) {
                     type: "spring",
                     duration: 1
                 }}
-                className="dark md:overflow-hidden w-full h-screen bg-center bg-no-repeat"
+                className="dark md:overflow-hidden w-full md:h-screen"
                 // style={{
                 //     background: "rgba(0, 0, 0, 1) no-repeat",
                 //     backgroundSize: 'cover',
                 //     backgroundAttachment: "fixed",
                 // }}
                 style={{
-                    backgroundImage: `url('/Website-BG.png')`,
+                    backgroundImage: `url('/Website-BG.webp')`,
                     backgroundSize: 'cover',
                     backgroundAttachment: "fixed",
                     backgroundRepeat: 'no-repeat'
                 }}
-              
                 >
                 <main>{children}</main>
             </motion.div>

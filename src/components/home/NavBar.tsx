@@ -40,7 +40,7 @@ export default function NavBar() {
                         {menuItems.map((item) => (
                             <NavigationMenuItem key={item.id} className={``}>
                                 <Link href={item.url} legacyBehavior passHref>
-                                    <NavigationMenuLink className={`flex group/${item.name} hover:text-temporal text-lg items-center`}>
+                                    <NavigationMenuLink className={`flex group/${item.name} hover:text-temporal text-xl items-center`}>
                                         {item.name}
                                         <ArrowUpRight className={`ml-2 opacity-0 group-hover/${item.name}:opacity-100 transition-opacity duration-300`} />
                                     </NavigationMenuLink>
