@@ -36,7 +36,7 @@ const Learn: NextPage = () => {
 
                     {/* <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] bg-gradient-to-b from-black/70 to-transparent"> */}
                     <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] ">
-                        <TabsList className="grid text-sm md:text-xl w-full grid-cols-3 rounded-none border-0 border-temporal bg-temporal/5 backdrop-blur-[4px] bg-gradient-to-b from-temporal/5 from-50% to-transparent ">
+                        <TabsList className="grid text-sm md:text-xl w-full grid-cols-3 rounded-none bg-temporal/5 backdrop-blur-[8px] bg-gradient-to-b from-temporal/10 from-50% to-temporal/5 ">
                             <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="vAMM">Unified vAMM</TabsTrigger>
                             <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="feeder_pool">Feeder Pool</TabsTrigger>
                             <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="integration">Plug-n-Play</TabsTrigger>
@@ -46,16 +46,16 @@ const Learn: NextPage = () => {
                         <TabsContent value="vAMM">
 
                             {/* <Card className='rounded-none border-0 border-temporal bg-gray-800/20 backdrop-blur-[4px] '> */}
-                            <Card className='rounded-none border-0 border-temporal bg-temporal/5 backdrop-blur-[4px] bg-gradient-to-b from-temporal/5 from-50% to-transparent'>
+                            <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
 
                                 <CardHeader className=' text-center flex items-center justify-center'>
                                     <CardTitle className='font-normal text-lg md:text-xl'>
-                                        Unifying maturity-fragmented liquidity and pricing instruments of any given duration
+                                        Single liquidity pool. Continuous, market-determined forward curves for every asset
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent className="flex flex-col md:flex-row justify-center gap-12 mt-4">
 
-                                    <Card className='rounded-none border-temporal/40 bg-transparent bg-gradient-to-b from-gray-400/10 from-20% to-transparent'>
+                                    <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
                                         <CardHeader className='p-2 text-md border-b border-temporal/40 text-center flex items-center justify-center'>
                                             <CardTitle className='font-light text-lg'>
                                                 <span className=' font-medium'>
@@ -68,7 +68,7 @@ const Learn: NextPage = () => {
                                             <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMCurrent.svg" width="550" />
                                         </CardContent>
                                     </Card>
-                                    <Card className='rounded-none border-temporal/40 bg-transparent bg-gradient-to-b from-gray-400/10 from-20% to-transparent'>
+                                    <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
                                         <CardHeader className='p-2 text-md border-b border-temporal/40 text-center flex items-center justify-center'>
                                             <CardTitle className='font-light text-lg'>
                                                 <span className=' font-medium'>
@@ -83,15 +83,16 @@ const Learn: NextPage = () => {
                                     </Card>
 
                                 </CardContent>
-                                <CardFooter className='text-lg md:text-xl text-center flex items-center justify-center'>
-                                    Single liquidity pool for each asset, generating continuous, market-determined forward-curves
+                                <CardFooter className='text-lg md:text-xl text-center flex-col md:flex-row gap-4 items-center justify-center'>
+                                    <p> • Pricing fixed income and derivatives of any duration </p>
+                                    <p> • Deeper liquidity for all maturities </p>
                                 </CardFooter>
                             </Card>
                         </TabsContent>
 
 
                         <TabsContent value="integration">
-                        <Card className='rounded-none border-0 border-temporal bg-temporal/5 backdrop-blur-[4px] bg-gradient-to-b from-temporal/5 from-50% to-transparent'>
+                            <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
                                 {/* <Card className='rounded-none faded-border border-temporal bg-gray-800/20 backdrop-blur-[4px]'> */}
                                 <CardHeader className=' text-center flex items-center justify-center'>
                                     <CardTitle className='font-normal text-lg md:text-xl'>
@@ -103,8 +104,8 @@ const Learn: NextPage = () => {
                                         <DotLottiePlayer
                                             src="./LearnIntegrationPuzzle.lottie"
                                             autoplay
+                                            loop
                                             speed={1}
-                                            className=''
                                             style={{ height: "auto", width: "100%" }}
                                         />
                                     </div>
@@ -136,43 +137,39 @@ const Learn: NextPage = () => {
 
 
                         <TabsContent value="feeder_pool">
-                        <Card className='rounded-none border-0 border-temporal bg-temporal/5 backdrop-blur-[4px] bg-gradient-to-b from-temporal/5 from-50% to-transparent'>
+                            <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
                                 <CardHeader className='text-xl text-center flex items-center justify-center'>
                                     <CardTitle className='font-normal'>
                                         Channelling liquidity to Market Venues
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-4">
+                                <CardContent className="flex flex-col md:flex-row justify-center gap-4">
 
-                                    <Card className='rounded-none border-none bg-transparent -m-20'> 
-                                    {/* <Card className='rounded-none  bg-gray-900/5 backdrop-blur-[4px]'>  */}
-                                        {/* <CardHeader className='p-2 text-md border-b border-temporal text-center flex items-center justify-center'>
-                                            <CardTitle className='font-light text-lg'>
-                                                <span className=' font-medium'>
-                                                    Current Paradigm:&nbsp;
-                                                </span>
-                                                Maturity-Fragmented Markets (Ex: BTC)
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="container max-w-xl aspect-w-16 aspect-h-9 mt-4">
-                                            <DotLottiePlayer
-                                                src="./Blocks.lottie"
-                                                autoplay
-                                                speed={2}
-                                                className=''
-                                                style={{ height: "auto", width: "100%" }}
-                                            />
-                                        </CardContent> */}
-                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-4">
-                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnFeederPool.svg" width="850" />
+                                    <Card className='rounded-none border-none bg-transparent'>
+
+                                        <CardContent className="flex justify-center">
+                                            <div className="container">
+                                                <img alt="Mobile Image"
+                                                    className="md:hidden block "
+                                                    src="/LearnFeederPoolMobile.svg"
+                                                    height="450"
+                                                    width="auto"
+                                                />
+
+                                                <img alt="Desktop Image"
+                                                    className="hidden md:block"
+                                                    src="/LearnFeederPool.svg"
+                                                    height="150"
+                                                    width="850"
+                                                />
+                                            </div>
+
                                         </CardContent>
                                     </Card>
 
-
-
                                 </CardContent>
                                 <CardFooter className='text-xl text-center flex items-center justify-center'>
-                                    Feeder pools for one-click liquidity provision to outposts across market venues
+                                    LPs simply select base asset. Feeder Pools manage allocation across dApps to optimize for rewards.
                                 </CardFooter>
                             </Card>
                         </TabsContent>

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import plugin from 'tailwindcss/plugin';
 
 const config = {
   darkMode: ["class"],
@@ -78,7 +79,49 @@ const config = {
       }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          'bg-radient': (value: string) => ({ 
+            'background-image': `radial-gradient(${value},var(--tw-gradient-stops))`,
+          }),
+        },
+        { values: theme('radialGradients') } 
+      )
+    },
+    {
+      theme: {
+        radialGradients: _presets(),
+      },
+    }),
+  ],
 } satisfies Config
+
+interface RadialGradientPreset {
+  [key: string]: string;
+}
+
+function _presets(): RadialGradientPreset {
+  const shapes = ['circle', 'ellipse'];
+  const pos = {
+    c: 'center',
+    t: 'top',
+    b: 'bottom',
+    l: 'left',
+    r: 'right',
+    tl: 'top left',
+    tr: 'top right',
+    bl: 'bottom left',
+    br: 'bottom right',
+  };
+  let result: RadialGradientPreset = {};
+  for (const shape of shapes)
+    for (const [posName, posValue] of Object.entries(pos))
+      result[`${shape}-${posName}`] = `${shape} at ${posValue}`;
+
+  return result;
+}
 
 export default config
