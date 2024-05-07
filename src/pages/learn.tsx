@@ -37,9 +37,9 @@ const Learn: NextPage = () => {
                     {/* <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] bg-gradient-to-b from-black/70 to-transparent"> */}
                     <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] ">
                         <TabsList className="grid text-sm md:text-xl w-full grid-cols-3 rounded-none bg-temporal/5 backdrop-blur-[8px] bg-gradient-to-b from-temporal/10 from-50% to-temporal/5 ">
-                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4 data-[state=active]:font-medium' value="vAMM">Unified vAMM</TabsTrigger>
-                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4 data-[state=active]:font-medium' value="feeder_pool">Feeder Pool</TabsTrigger>
-                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4 data-[state=active]:font-medium' value="integration">Plug-And-Play</TabsTrigger>
+                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:font-medium' value="vAMM">Unified vAMM</TabsTrigger>
+                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:font-medium' value="feeder_pool">Feeder Pool</TabsTrigger>
+                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:font-medium' value="integration">Plug-And-Play</TabsTrigger>
                         </TabsList>
 
 
@@ -53,7 +53,7 @@ const Learn: NextPage = () => {
                                         Single liquidity pool. Continuous, market-determined forward curves for every asset
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent className="flex flex-col md:flex-row justify-center gap-12 mt-4">
+                                <CardContent className="flex flex-col md:flex-row justify-center gap-12 mt-0">
 
                                     <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
                                         <CardHeader className='p-2 text-md border-b border-temporal/40 text-center flex items-center justify-center'>
@@ -64,8 +64,8 @@ const Learn: NextPage = () => {
                                                 Maturity-Fragmented Markets (Ex: BTC)
                                             </CardTitle>
                                         </CardHeader>
-                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-4">
-                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMCurrent.svg" width="550" />
+                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-2">
+                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMCurrent.svg" width="500" />
                                         </CardContent>
                                     </Card>
                                     <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
@@ -77,8 +77,8 @@ const Learn: NextPage = () => {
                                                 Forward-curve Unified Markets (Ex: BTC)
                                             </CardTitle>
                                         </CardHeader>
-                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-4">
-                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMFuture.svg" width="550" />
+                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-2">
+                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMFuture.svg" width="500" />
                                         </CardContent>
                                     </Card>
 
