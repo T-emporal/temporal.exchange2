@@ -37,9 +37,9 @@ const Learn: NextPage = () => {
                     {/* <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] bg-gradient-to-b from-black/70 to-transparent"> */}
                     <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] ">
                         <TabsList className="grid text-sm md:text-xl w-full grid-cols-3 rounded-none bg-temporal/5 backdrop-blur-[8px] bg-gradient-to-b from-temporal/10 from-50% to-temporal/5 ">
-                            <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4' value="vAMM">Unified vAMM</TabsTrigger>
-                            <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4' value="feeder_pool">Feeder Pool</TabsTrigger>
-                            <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4' value="integration">Plug-And-Play</TabsTrigger>
+                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4 data-[state=active]:font-medium' value="vAMM">Unified vAMM</TabsTrigger>
+                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4 data-[state=active]:font-medium' value="feeder_pool">Feeder Pool</TabsTrigger>
+                            <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:border-b-4 data-[state=active]:font-medium' value="integration">Plug-And-Play</TabsTrigger>
                         </TabsList>
 
 
