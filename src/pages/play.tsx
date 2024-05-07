@@ -10,7 +10,7 @@ import { Fragment, useEffect, useState } from "react";
 import Board from '@/components/tetris/Board';
 import { useTetris } from '../hooks/useTetris';
 
-import Layout from "@/components/home/Layout";
+import Layout from "@/components/basic/Layout";
 
 const ThankYou: NextPage = () => {
 

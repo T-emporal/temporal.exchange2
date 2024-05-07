@@ -20,7 +20,7 @@ const Hero: NextPage = () => {
       <div className="mx-auto flex flex-col md:max-w-[70vw] md:flex-row">
         <div className="md:text-center text-left">
 
-          <div className="flex items-center justify-center min-w-[50vw]">
+          <div className="mx-6 flex items-center justify-center min-w-[50vw]">
             <h2 className=" text-6xl items-center text-white md:mx-0 lg:text-7xl">
               <TextSwitcher texts={linesOfText} staticText="Defragmenting" interval={2000} />
             </h2>
@@ -70,9 +70,7 @@ const Hero: NextPage = () => {
             />
           </h2> */}
 
-          <p
-            className="mx-6 text-gray-400 font-light text-4xl mt-16 text-left md:text-center "
-          >
+          <p className="mx-6 text-gray-400 font-light text-3xl mt-16 text-left md:text-center ">
             Patent-pending market infrastructure bringing unprecedented efficiencies to fixed-income and derivatives. Integrates with TradFi and DeFi market venues.
           </p>
         </div>

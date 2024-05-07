@@ -3,7 +3,7 @@ import { ArrowLeftCircleIcon, ArrowPathIcon, ChevronDownIcon } from "@heroicons/
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
-import Layout from "@/components/home/Layout";
+import Layout from "@/components/basic/Layout";
 import Navbar from "@/components/home/NavBar";
 
 import {

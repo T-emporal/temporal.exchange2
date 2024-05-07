@@ -13,7 +13,7 @@ export default function Layout({ children }: any) {
                     type: "spring",
                     duration: 1
                 }}
-                className="dark md:overflow-hidden w-full md:h-screen"
+                className="dark overflow-auto md:overflow-hidden w-full  md:h-screen"
                 // style={{
                 //     background: "rgba(0, 0, 0, 1) no-repeat",
                 //     backgroundSize: 'cover',

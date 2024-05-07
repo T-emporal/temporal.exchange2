@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 84% 0%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -153,4 +153,15 @@
 .cell.Z {
   background-color: #0ABA5B90
   ;
+}
+
+.faded-border {
+  /* border-top: 2px solid rgba(10, 186, 181, 0.1);  */
+  border-right: 2px solid rgba(10, 186, 181, 0.1); 
+  border-bottom: 2px solid rgba(10, 186, 181, 0.1); 
+  border-left: 2px solid rgba(10, 186, 181, 0.1); 
+  border-top: 2px solid rgba(255, 255, 255, 0.1); 
+  border-right: 2px solid rgba(255, 255, 255, 0.1); 
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
+  border-left: 2px solid rgba(255, 255, 255, 0.1); 
 }
