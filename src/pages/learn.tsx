@@ -39,7 +39,7 @@ const Learn: NextPage = () => {
                         <TabsList className="grid text-sm md:text-xl w-full grid-cols-3 rounded-none bg-temporal/5 backdrop-blur-[8px] bg-gradient-to-b from-temporal/10 from-50% to-temporal/5 ">
                             <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="vAMM">Unified vAMM</TabsTrigger>
                             <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="feeder_pool">Feeder Pool</TabsTrigger>
-                            <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="integration">Plug-n-Play</TabsTrigger>
+                            <TabsTrigger className='rounded-none border-0 border-temporal hover:bg-temporal/25 data-[state=active]:bg-transparent data-[state=active]:shadow-lg data-[state=active]:shadow-temporal' value="integration">Plug-And-Play</TabsTrigger>
                         </TabsList>
 
 
@@ -139,7 +139,7 @@ const Learn: NextPage = () => {
                         <TabsContent value="feeder_pool">
                             <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
                                 <CardHeader className='text-xl text-center flex items-center justify-center'>
-                                    <CardTitle className='font-normal'>
+                                    <CardTitle className='font-normal text-lg md:text-xl'>
                                         Channelling liquidity to Market Venues
                                     </CardTitle>
                                 </CardHeader>
