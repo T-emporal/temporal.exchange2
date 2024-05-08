@@ -177,7 +177,7 @@ const Infrastructure: NextPage = () => {
                                     </Card>
 
                                 </CardContent>
-                                <CardFooter className='text-xl text-center flex items-center justify-center'>
+                                <CardFooter className='text-lg md:text-xl text-center flex items-center justify-center'>
                                     LPs simply select base asset. Feeder Pools manage allocation across dApps to optimize for rewards.
                                 </CardFooter>
                             </Card>
