@@ -24,7 +24,7 @@ export default function NavBar() {
         // { id: 1, name: 'Applications', url: '/applications' },
         // { id: 2, name: 'Features', url: '/features' },
         // { id: 3, name: 'Architecture', url: '/architecture' },
-        { id: 4, name: 'Learn', url: '/learn' },
+        { id: 4, name: 'Infrastructure', url: '/infrastructure' },
         // { id: 5, name: 'Research', url: '/research' },
         // { id: 6, name: 'Docs', url: 'https://docs.temporal.exchange/temporal/v/handbook/' },
         { id: 7, name: 'Litepaper', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4636450' },
