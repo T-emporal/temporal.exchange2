@@ -1,9 +1,12 @@
 import React from 'react';
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Layout from "@/components/basic/Layout";
+// import Layout from "@/components/basic/Layout";
+import RootLayout from "@/app/layout";
 import Navbar from "@/components/home/NavBar";
 import Speedy from '@/components/basic/Speedy';
+import Image from 'next/image';
+
 
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
@@ -23,13 +26,14 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import LottiePlayer from '@/components/basic/LottiePlayer';
 
 const Infrastructure: NextPage = () => {
 
     return (
         <>
-            <NextSeo title="Learn more about the magic behind Temporal" />
-            <Layout>
+            {/* <NextSeo title="Learn more about the magic behind Temporal" /> */}
+            <RootLayout>
                 <div className='md:h-screen'>
 
                     <Navbar></Navbar>
@@ -74,7 +78,13 @@ const Infrastructure: NextPage = () => {
                                             </CardTitle>
                                         </CardHeader>
                                         <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-2">
-                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMCurrent.svg" width="500" />
+                                            <Image
+                                                alt="Product"
+                                                src="/LearnvAMMCurrent.min.svg"
+                                                width={500}
+                                                height={150}
+                                                priority
+                                            />
                                         </CardContent>
                                     </Card>
                                     <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
@@ -87,7 +97,13 @@ const Infrastructure: NextPage = () => {
                                             </CardTitle>
                                         </CardHeader>
                                         <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-2">
-                                            <img alt="Product" className="aspect-[1.6]" height="150" src="/LearnvAMMFuture.svg" width="500" />
+                                            <Image
+                                                alt="Product"
+                                                src="/LearnvAMMFuture.min.svg"
+                                                width={500}
+                                                height={150}
+                                                priority
+                                            />
                                         </CardContent>
                                     </Card>
 
@@ -110,33 +126,15 @@ const Infrastructure: NextPage = () => {
                                 </CardHeader>
                                 <CardContent className="flex flex-col md:flex-row justify-center gap-12 mt-4">
                                     <div className='max-w-xl'>
-                                        <DotLottiePlayer
-                                            src="./LearnIntegrationPuzzle.lottie"
+                                        <LottiePlayer
+                                            src="/LearnIntegrationPuzzle.lottie"
                                             autoplay
                                             loop
                                             speed={1}
-                                            style={{ height: "auto", width: "100%" }}
-                                        />
+                                            className=''
+                                            style={{ height: "auto", width: "100%" }}>
+                                        </LottiePlayer>
                                     </div>
-
-
-
-                                    {/* <Card className='rounded-none faded-border bg-gray-900/5 backdrop-blur-[4px]'> */}
-
-
-                                    {/* <Card className='rounded-none border-0 bg-transparent'>
-                                      
-                                        <CardContent className="container border max-w-xl py-6 mt-4">
-                                            <DotLottiePlayer
-                                                src="./learn-integration-puzzle.lottie"
-                                                autoplay
-                                                speed={1}
-                                                className=''
-                                                style={{ height: "auto", width: "100%" }}
-                                            />
-                                        </CardContent>
-                                    </Card> */}
-
                                 </CardContent>
                                 <CardFooter className='text-lg md:text-xl text-center flex items-center justify-center'>
                                     Plug-and-play market infrastructure for easy deployment of outposts
@@ -158,18 +156,22 @@ const Infrastructure: NextPage = () => {
 
                                         <CardContent className="flex justify-center">
                                             <div className="container">
-                                                <img alt="Mobile Image"
-                                                    className="md:hidden block "
-                                                    src="/LearnFeederPoolMobile.svg"
-                                                    height="450"
-                                                    width="auto"
+                                                <Image
+                                                    alt="Mobile Image"
+                                                    src="/LearnFeederPoolMobile.min.svg"
+                                                    height={450}
+                                                    width={450}
+                                                    className="md:hidden block"
+                                                    priority
                                                 />
 
-                                                <img alt="Desktop Image"
+                                                <Image
+                                                    alt="Desktop Image"
+                                                    src="/LearnFeederPool.min.svg"
+                                                    height={150}
+                                                    width={850}
                                                     className="hidden md:block"
-                                                    src="/LearnFeederPool.svg"
-                                                    height="150"
-                                                    width="850"
+                                                    priority
                                                 />
                                             </div>
 
@@ -200,7 +202,7 @@ const Infrastructure: NextPage = () => {
                         </div>
                     </div> */}
                 </div>
-            </Layout>
+            </RootLayout>
 
         </>
     );

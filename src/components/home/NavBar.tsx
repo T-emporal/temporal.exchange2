@@ -1,3 +1,5 @@
+'use client'
+
 import { useMediaQuery } from "@/hooks/UseMediaQuery";
 import { Drawer, DrawerContent, DrawerTrigger, DrawerFooter, DrawerClose } from "../ui/drawer";
 import {
@@ -12,13 +14,17 @@ import { ArrowUpRight, MenuIcon } from "lucide-react";
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
+import { usePathname, useSearchParams } from 'next/navigation';
+
 
 
 export default function NavBar() {
     const isDesktop = useMediaQuery("(min-width: 768px)");
-    const router = useRouter();
-    const currentPage = router.pathname;
+    // const router = useRouter();
+    // const currentPage = router.pathname;
+    const currentPage = usePathname();
+
 
     const menuItems = [
         // { id: 1, name: 'Applications', url: '/applications' },

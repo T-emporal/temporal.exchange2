@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Layout from "@/components/basic/Layout";
+// import Layout from "@/components/basic/Layout";
+import RootLayout from "@/app/layout";
 import Navbar from "@/components/home/NavBar";
 import Hero from "@/components/home/Hero";
 import Backers from "@/components/home/Backers";
@@ -8,7 +9,7 @@ import Backers from "@/components/home/Backers";
 const Home: NextPage = () => {
   return (
     <>
-      <Layout>
+      <RootLayout>
         <Head>
           <title>Temporal</title>
           <meta name="description" content="Decentralized Finances" />
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
         <Navbar />
         <Hero />
         <Backers />
-      </Layout>
+      </RootLayout>
     </>
   );
 };
