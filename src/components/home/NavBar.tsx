@@ -1,4 +1,5 @@
-import { useMediaQuery } from "@/hooks/UseMediaQuery";
+'use client'
+
 import { Drawer, DrawerContent, DrawerTrigger, DrawerFooter, DrawerClose } from "../ui/drawer";
 import {
     NavigationMenu,
@@ -12,13 +13,16 @@ import { ArrowUpRight, MenuIcon } from "lucide-react";
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
+import { usePathname, useSearchParams } from 'next/navigation';
+
 
 
 export default function NavBar() {
-    const isDesktop = useMediaQuery("(min-width: 768px)");
-    const router = useRouter();
-    const currentPage = router.pathname;
+    // const router = useRouter();
+    // const currentPage = router.pathname;
+    const currentPage = usePathname();
+
 
     const menuItems = [
         // { id: 1, name: 'Applications', url: '/applications' },
@@ -33,19 +37,15 @@ export default function NavBar() {
     return (
         <div className="sm:h-[15vh] dark flex justify-between items-center py-4 px-4 md:px-20">
             <div className="flex items-center">
-                {isDesktop ? (
-                    <Link href="/">
+                    <Link className="hidden md:flex" href="/">
                         <Image src="./TemporalLogoComplete.svg" alt="Complete Temporal Logo" width={250} height={250} />
                     </Link>
-                ) : (
-                    <Link href="/">
+                    <Link className="flex md:hidden" href="/">
                         <Image src="./TemporalLogoWithT.svg" alt="Temporal Logo" width={90} height={90} />
                     </Link>
-                )}
             </div>
 
-            {isDesktop ? (
-                <NavigationMenu>
+                <NavigationMenu className="hidden md:flex">
                     <NavigationMenuList className="gap-4">
                         {menuItems.map((item) => (
                             <NavigationMenuItem key={item.id} className={``}>
@@ -59,8 +59,8 @@ export default function NavBar() {
                         ))}
                     </NavigationMenuList>
                 </NavigationMenu>
-            ) : (
-                <div>
+
+                <div className="block md:hidden">
                     <Drawer direction="right">
                         <DrawerTrigger>
                             <MenuIcon className="text-white" />
@@ -79,7 +79,6 @@ export default function NavBar() {
                         </DrawerContent>
                     </Drawer>
                 </div>
-            )}
         </div>
     );
 }
