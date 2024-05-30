@@ -18,6 +18,7 @@ export default function NavBar() {
 
     const currentPage = usePathname();
 
+
     const menuItems = [
         // { id: 1, name: 'APPLICATIONS', url: '/applications' },
         // { id: 2, name: 'FEATURES', url: '/features' },
@@ -32,6 +33,7 @@ export default function NavBar() {
         <div>
             <div className="sm:h-[15vh] dark flex justify-between items-center py-4 px-4 md:px-20">
                 <div className="flex items-center">
+
                     <Link className="hidden md:flex" href="/">
                         <Image src="./TemporalLogoComplete.svg" alt="Complete Temporal Logo" width={250} height={250} />
                     </Link>
@@ -39,6 +41,7 @@ export default function NavBar() {
                         <Image src="./TemporalLogoWithT.svg" alt="Temporal Logo" width={90} height={90} />
                     </Link>
                 </div>
+
 
                 <NavigationMenu className="hidden md:flex">
                     <NavigationMenuList className="gap-4">
