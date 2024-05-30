@@ -1,14 +1,11 @@
 import React from 'react';
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
-// import Layout from "@/components/basic/Layout";
 import RootLayout from "@/app/layout";
 import Navbar from "@/components/home/NavBar";
 import Speedy from '@/components/basic/Speedy';
 import Image from 'next/image';
 
-
-import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
 
 import {
@@ -19,7 +16,6 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
 import {
     Tabs,
     TabsContent,
@@ -27,6 +23,9 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 import LottiePlayer from '@/components/basic/LottiePlayer';
+import CarouselCard from '@/components/basic/CarouselCard';
+import { ChevronRight } from 'lucide-react';
+import { chakraPetch } from '@/lib/font';
 
 const Infrastructure: NextPage = () => {
 
@@ -39,148 +38,140 @@ const Infrastructure: NextPage = () => {
                     <Navbar></Navbar>
 
                     {/* <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] bg-gradient-to-b from-black/70 to-transparent"> */}
-                    <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh] ">
-                        <TabsList className="grid text-sm md:text-xl w-full grid-cols-3 rounded-none bg-temporal/5 backdrop-blur-[8px] bg-gradient-to-b from-temporal/10 from-50% to-temporal/5 ">
+                    <Tabs defaultValue="vAMM" className=" md:px-12 w-screen md:max-h-[70vh]">
+                        <TabsList
+                            className={`grid text-sm md:text-xl w-full grid-cols-3 rounded-none ${chakraPetch.className}`}
+                            style={{
+                                backgroundImage: `url('/Noise-BG.svg')`,
+                                backgroundSize: 'cover',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: 'center',
+                            }}>
                             <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 
                             data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:font-medium'
-                                value="vAMM">Time Unified vAMM
+                                value="vAMM">TIME UNIFIED vAMM
                             </TabsTrigger>
                             <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 
                             data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:font-medium'
-                                value="feeder_pool">Feeder Pool
+                                value="feeder_pool">FEEDER POOL
                             </TabsTrigger>
                             <TabsTrigger className=' font-normal rounded-none border-0 border-temporal hover:bg-temporal/25 
                             data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:font-medium'
-                                value="integration">Plug-And-Play
+                                value="integration">PLUG-AND-PLAY
                             </TabsTrigger>
                         </TabsList>
 
 
                         <TabsContent value="vAMM">
-
-                            {/* <Card className='rounded-none border-0 border-temporal bg-gray-800/20 backdrop-blur-[4px] '> */}
-                            <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
-
-                                <CardHeader className=' text-center flex items-center justify-center'>
-                                    <CardTitle className='font-normal text-lg md:text-xl'>
-                                        Single liquidity pool. Continuous, market-determined forward curves for every asset
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex flex-col md:flex-row justify-center gap-12 mt-0">
-
-                                    <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
-                                        <CardHeader className='p-2 text-md border-b border-temporal/40 text-center flex items-center justify-center'>
-                                            <CardTitle className='font-light text-lg'>
-                                                <span className=' font-medium'>
-                                                    Current Paradigm:&nbsp;
-                                                </span>
-                                                Maturity-Fragmented Markets (Ex: BTC)
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-2">
-                                            <Image
-                                                alt="Product"
-                                                src="/LearnvAMMCurrent.min.svg"
-                                                width={500}
-                                                height={150}
-                                                priority
-                                            />
-                                        </CardContent>
-                                    </Card>
-                                    <Card className='rounded-none border-temporal/40 bg-transparent bg-radient-ellipse-t from-gray-600/30 from-0% to-transparent to-80%'>
-                                        <CardHeader className='p-2 text-md border-b border-temporal/40 text-center flex items-center justify-center'>
-                                            <CardTitle className='font-light text-lg'>
-                                                <span className=' font-medium'>
-                                                    Future Paradigm:&nbsp;
-                                                </span>
-                                                Forward-curve Unified Markets (Ex: BTC)
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="flex flex-col md:flex-row justify-center gap-4 mt-2">
-                                            <Image
-                                                alt="Product"
-                                                src="/LearnvAMMFuture.min.svg"
-                                                width={500}
-                                                height={150}
-                                                priority
-                                            />
-                                        </CardContent>
-                                    </Card>
-
-                                </CardContent>
-                                <CardFooter className='text-lg md:text-xl text-center flex-col md:flex-row gap-4 items-center justify-center'>
-                                    <p> • Pricing fixed income and derivatives of any duration </p>
-                                    <p> • Deeper liquidity for all maturities </p>
-                                </CardFooter>
-                            </Card>
+                            <CarouselCard />
                         </TabsContent>
 
 
-                        <TabsContent value="integration">
-                            <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
+                        <TabsContent value="integration" className=' '>
+                            <Card className='rounded-none border-0 border-temporal'
+                                style={{
+                                    backgroundImage: `url('/Noise-BG.svg')`,
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center',
+                                }}>
                                 {/* <Card className='rounded-none faded-border border-temporal bg-gray-800/20 backdrop-blur-[4px]'> */}
-                                <CardHeader className=' text-center flex items-center justify-center'>
-                                    <CardTitle className='font-normal text-lg md:text-xl'>
-                                        Extending functionality and increasing revenue for TradFi and DeFi Market Venues
-                                    </CardTitle>
+                                <CardHeader className=' '>
+
                                 </CardHeader>
-                                <CardContent className="flex flex-col md:flex-row justify-center gap-12 mt-4">
-                                    <div className='max-w-xl'>
-                                        <LottiePlayer
-                                            src="/LearnIntegrationPuzzle.lottie"
-                                            autoplay
-                                            loop
-                                            speed={1}
-                                            className=''
-                                            style={{ height: "auto", width: "100%" }}>
-                                        </LottiePlayer>
+                                <CardContent className="flex flex-col md:flex-row items-start md:items-center gap-8 mx-8 min-h-[60vh]">
+                                    <div className="flex flex-col flex-1 justify-between">
+                                        <div className={`mt-8 transition-opacity duration-300 opacity-100`}>
+                                            <CardTitle className='font-light text-temporal text-2xl mb-6'>
+                                                Plug & Play Mechanism:
+                                            </CardTitle>
+                                            <h2 className='text-md mb-8 font-normal text-gray-500'>
+                                                PLUG & PLAY MECHANISM
+                                            </h2>
+                                            <ul className='list-none pl-0 text-xl font-light text-coffee'>
+                                                <li className='flex mb-8'>
+                                                    <ChevronRight size={40} className="text-temporal mr-2" />
+                                                    <span className="text-coffee">Extending functionality and increasing revenue for TradFi and DeFi Market Venues.</span>
+                                                </li>
+                                                <li className='flex mb-8'>
+                                                    <ChevronRight size={40} className="text-temporal mr-2" />
+                                                    <span className="text-coffee">Plug-and-play market infrastructure for easy deployment of outposts.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div className={`flex-1 flex items-center justify-center border border-gray-600 p-8`}>
+                                        <div className='max-w-xl'>
+                                            <LottiePlayer
+                                                src="/LearnIntegrationPuzzle.lottie"
+                                                autoplay
+                                                loop
+                                                speed={1}
+                                                className=''
+                                                style={{ height: "auto", width: "100%" }}>
+                                            </LottiePlayer>
+                                        </div>
                                     </div>
                                 </CardContent>
-                                <CardFooter className='text-lg md:text-xl text-center flex items-center justify-center'>
-                                    Plug-and-play market infrastructure for easy deployment of outposts
+                                <CardFooter className=''>
                                 </CardFooter>
                             </Card>
                         </TabsContent>
 
 
                         <TabsContent value="feeder_pool">
-                            <Card className='rounded-none border-0 border-temporal backdrop-blur-[8px] bg-radient-ellipse-t from-temporal/20 from-0% to-transparent to-80%'>
-                                <CardHeader className='text-xl text-center flex items-center justify-center'>
-                                    <CardTitle className='font-normal text-lg md:text-xl'>
-                                        Channelling liquidity to Market Venues
+                            <Card className='rounded-none border-0 border-temporal px-8'
+                                style={{
+                                    backgroundImage: `url('/Noise-BG.svg')`,
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center',
+                                }}>
+                                <CardHeader className=''>
+                                    <CardTitle className='font-light text-temporal text-2xl mb-6 '>
+                                        Feeder Pool
                                     </CardTitle>
                                 </CardHeader>
-                                <CardContent className="flex flex-col md:flex-row justify-center gap-4">
+                                <CardContent className="flex flex-col justify-center gap-4 min-h-[60vh]">
+                                    <div>
+                                        <ul className='list-none pl-0 text-xl font-light text-coffee'>
+                                            <li className='flex mb-8'>
+                                                <ChevronRight size={30} className="text-temporal mr-2" />
+                                                <span className="text-coffee">Channelling liquidity to Market Venues. Channelling liquidity to Market Venues.</span>
+                                            </li>
+                                            <li className='flex mb-8'>
+                                                <ChevronRight size={30} className="text-temporal mr-2" />
+                                                <span className="text-coffee">LPs simply select base asset. Feeder Pools manage allocation across dApps to optimize for rewards.</span>
+                                            </li>
+                                        </ul>
 
-                                    <Card className='rounded-none border-none bg-transparent'>
+                                    </div>
 
-                                        <CardContent className="flex justify-center">
-                                            <div className="container">
-                                                <Image
-                                                    alt="Mobile Image"
-                                                    src="/LearnFeederPoolMobile.min.svg"
-                                                    height={450}
-                                                    width={450}
-                                                    className="md:hidden block"
-                                                    priority
-                                                />
+                                    <div className='flex items-center justify-center'>
+                                        <Image
+                                            alt="Mobile Image"
+                                            src="/LearnFeederPoolMobile.min.svg"
+                                            height={450}
+                                            width={450}
+                                            className="md:hidden block"
+                                            priority
+                                        />
 
-                                                <Image
-                                                    alt="Desktop Image"
-                                                    src="/LearnFeederPool.min.svg"
-                                                    height={150}
-                                                    width={850}
-                                                    className="hidden md:block"
-                                                    priority
-                                                />
-                                            </div>
+                                        <Image
+                                            alt="Desktop Image"
+                                            src="/LearnFeederPool.min.svg"
+                                            height={150}
+                                            width={850}
+                                            className="hidden md:block"
+                                            priority
+                                        />
+                                    </div>
 
-                                        </CardContent>
-                                    </Card>
+
 
                                 </CardContent>
                                 <CardFooter className='text-lg md:text-xl text-center flex items-center justify-center'>
-                                    LPs simply select base asset. Feeder Pools manage allocation across dApps to optimize for rewards.
                                 </CardFooter>
                             </Card>
                         </TabsContent>

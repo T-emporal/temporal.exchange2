@@ -1,10 +1,7 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import { buttonVariants } from "@/components/ui/button"
-import { TypeAnimation } from 'react-type-animation';
 
-import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import TextSwitcher from "../basic/TextSwitcher";
 
@@ -16,7 +13,7 @@ const linesOfText = [
 
 const Hero: NextPage = () => {
   return (
-    <div className="sm:h-[60vh] flex flex-col items-center justify-center">
+    <div className="sm:h-[60vh] mt-20 md:mt-0 flex flex-col items-center justify-center">
       <div className="mx-auto flex flex-col md:max-w-[70vw] md:flex-row">
         <div className="md:text-center text-left">
 
@@ -70,7 +67,7 @@ const Hero: NextPage = () => {
             />
           </h2> */}
 
-          <p className="mx-6 text-gray-400 font-light text-3xl mt-16 text-left md:text-center ">
+          <p className="mx-6 text-coffee font-light text-2xl mt-16 text-left md:text-center ">
             Patent-pending market infrastructure bringing unprecedented efficiencies to fixed-income and derivatives. Integrates with TradFi and DeFi market venues.
           </p>
         </div>

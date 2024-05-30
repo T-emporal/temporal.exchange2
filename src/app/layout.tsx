@@ -1,3 +1,4 @@
+import { ibmPlexMono } from "@/lib/font";
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -11,19 +12,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="dark overflow-auto md:overflow-hidden w-full  md:h-screen"
-                // style={{
-                //     background: "rgba(0, 0, 0, 1) no-repeat",
-                //     backgroundSize: 'cover',
-                //     backgroundAttachment: "fixed",
-                // }}
+    <html lang="en" className={ibmPlexMono.className}>
+      <body className="dark overflow-auto md:overflow-hidden w-full  md:h-screen "  
                 style={{
-                    backgroundImage: `url('/Website-BG.webp')`,
+                    background: "rgba(12, 12, 12, 1) no-repeat",
                     backgroundSize: 'cover',
                     backgroundAttachment: "fixed",
-                    backgroundRepeat: 'no-repeat'
                 }}
+                // style={{
+                //     backgroundImage: `url('/Website-BG.webp')`,
+                //     backgroundSize: 'cover',
+                //     backgroundAttachment: "fixed",
+                //     backgroundRepeat: 'no-repeat'
+                // }}
       >{children}</body>
     </html>
   )

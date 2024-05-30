@@ -21,6 +21,7 @@ const config = {
     extend: {
       colors: {
         temporal: "#0ABAB5",
+        coffee: "#CFBFAD",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

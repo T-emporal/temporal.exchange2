@@ -1,24 +1,31 @@
 import { type NextPage } from "next";
-import Head from "next/head";
-// import Layout from "@/components/basic/Layout";
+import { Metadata } from 'next'
 import RootLayout from "@/app/layout";
 import Navbar from "@/components/home/NavBar";
 import Hero from "@/components/home/Hero";
 import Backers from "@/components/home/Backers";
 
+export const metadata: Metadata = {
+  title: "Temporal",
+  description: "Future of Market Mechanisms",
+  icons: "/favicon.ico"
+
+};
+
 const Home: NextPage = () => {
   return (
     <>
       <RootLayout>
-        <Head>
-          <title>Temporal</title>
-          <meta name="description" content="Decentralized Finances" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <Navbar />
-        <Hero />
-        <Backers />
+        <div
+          style={{
+            backgroundImage: `url('/Noise-BG.svg')`,
+            backgroundSize: 'cover',
+            backgroundAttachment: "fixed",
+          }}>
+          <Navbar />
+          <Hero />
+          <Backers />
+        </div>
       </RootLayout>
     </>
   );

@@ -1,4 +1,4 @@
-'use client'; // Keep 'use client' as needed
+'use client'; 
 
 import React from 'react';
 import { DotLottiePlayer } from '@dotlottie/react-player';
