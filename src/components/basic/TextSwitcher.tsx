@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { chakraPetch } from '@/lib/font';
 
 interface TextSwitcherProps {
   staticText: string;
@@ -54,8 +57,8 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval
   };
 
   return (
-<div className="flex flex-col items-center text-temporal font-medium md:flex-row" ref={textContainerRef}> 
-  <span className="mr-4 mb-4 md:mb-0 text-white font-medium">{staticText}</span>
+<div className={`flex flex-col items-center font-medium md:flex-row ${chakraPetch.className}`} ref={textContainerRef}> 
+  <span className="mr-4 mb-4 md:mb-0 text-coffee font-medium">{staticText}</span>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}

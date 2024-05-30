@@ -1,7 +1,8 @@
+'use client'
+
 import React, { useState } from 'react';
 import type { NextPage } from "next";
 
-import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
@@ -12,13 +13,11 @@ import XIcon from '@mui/icons-material/X';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-
-
 const actions = [
     { icon: <MailIcon />, name: 'Email', url: 'mailto:hello@temporal.exchange' },
     { icon: <LinkedInIcon />, name: 'LinkedIn', url: 'https://www.linkedin.com/company/temporal-exchange' },
     { icon: <XIcon />, name: 'X (Twitter)', url: 'https://twitter.com/TemporalFinance' },
-    { icon: <YouTubeIcon />, name: 'YouTube', url: 'youtube - https://www.youtube.com/@TemporalFinance' },
+    { icon: <YouTubeIcon />, name: 'YouTube', url: 'https://www.youtube.com/@TemporalFinance' },
     // { icon: <TelegramIcon />, name: 'Telegram', url: 'https://Telegram.com' },
 ];
 
