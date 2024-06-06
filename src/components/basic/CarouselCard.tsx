@@ -41,12 +41,12 @@ export function CarouselCard() {
 
     return (
         <Card className='rounded-none border-0 '
-        style={{
-            backgroundImage: `url('/Noise-BG.svg')`,
-            backgroundSize: 'cover', 
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-        }}>
+            style={{
+                backgroundImage: `url('/Noise-BG.svg')`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+            }}>
             <CardHeader className=''>
 
             </CardHeader>

@@ -1,31 +1,17 @@
 import type { NextPage } from "next";
 import Image from 'next/image';
+import Link from "next/link";
 
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
 
-import { NextSeo } from "next-seo";
-import { Fragment, useEffect, useState } from "react";
+import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 
-import Board from '@/components/tetris/Board';
-import { useTetris } from '../hooks/useTetris';
+import TetrisBoard from "@/components/tetris/PlayTetris";
+import RootLayout from "../layout";
+import LottiePlayer from "@/components/basic/LottiePlayer";
 
-import Layout from "@/components/basic/Layout";
-
-const ThankYou: NextPage = () => {
-
-    const [isHovered, setIsHovered] = useState(false);
-    const { board, startGame, isPlaying, score } = useTetris();
-
-    const [showTetris, setShowTetris] = useState(false);
-
-    // const [rowCount, setRowCount] = useState<number>(0);
-    // const [isRowCountLoading, setIsRowCountLoading] = useState<boolean>(true);
-
-
-    const toggleView = () => {
-        setShowTetris(!showTetris);
-    };
+const Play: NextPage = () => {
 
     const tetrisLetters = [
         { letter: "T", color: "#0ABAB5" },
@@ -38,30 +24,13 @@ const ThankYou: NextPage = () => {
         { letter: "s", color: "#C39B9D" },
     ];
 
-    return (<Fragment>
-        <NextSeo title="Thank You" />
-        <Layout>
+    return (
+        <RootLayout>
             <div className="hidden md:flex md:flex-col">
-                <div className={`flex gap-40 items-center justify-center h-screen ${showTetris ? 'animate-slideUp' : ''}`}>
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="h-full mx-5 relative backdrop-blur-[6px] text-xl rounded-xl p-10"
-                            style={{
-                                background: 'radial-gradient(ellipse at center top, rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0.2) 100%)',
-                                boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
-                            }}>
-                            <h2 className="text-center text-xl text-temporal mb-4">Score: <span className="text-white">{score}</span></h2>
+                <div className="flex gap-40 items-center justify-center h-screen">
 
-                            <Board currentBoard={board} />
-                            <div className="flex flex-col items-center">
-                                {isPlaying ? (
-                                    <button className="mt-8 rounded-full border-2 border-temporal text-base px-12 py-4 text-temporal hover:bg-temporal hover:text-white transition-colors" onClick={startGame}>RESTART</button>
-                                ) : (
-                                    <button className="mt-8 rounded-full border-2 border-temporal text-base px-12 py-4 text-temporal hover:bg-temporal hover:text-white transition-colors" onClick={startGame}>NEW GAME</button>
-                                )}
-                            </div>
-                        </div>
+                    <TetrisBoard></TetrisBoard>
 
-                    </div>
                     <div className="flex flex-col items-center justify-center">
 
 
@@ -77,14 +46,15 @@ const ThankYou: NextPage = () => {
                                     {letter}
                                 </span>
                             ))}
-                            <DotLottiePlayer
-                                src="./Blocks.lottie"
+                            <LottiePlayer
+                                src="/Blocks.lottie"
                                 autoplay
                                 loop
                                 speed={1}
+                                className=''
                                 style={{ paddingBottom: "2px", marginLeft: "10px", marginRight: "10px", height: "35px", width: "auto" }}
-                            >
-                            </DotLottiePlayer>
+                                >
+                            </LottiePlayer>
                             {" "}in the mean time!
                         </h1>
                         <h1 className="text-3xl text-center text-white my-6 font-extralight">
@@ -98,15 +68,10 @@ const ThankYou: NextPage = () => {
                             </h1>
                         </div>
 
-                        <div
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                            onClick={(): void => { void (window.location.href = "/"); }}
-                            className="cursor-pointer flex items-center space-x-4 mt-12 mb-4 text-white font-extralight hover:text-[#0ABAB5]"
-                        >
-                            <Image src={isHovered ? "/arrow-left-circle-hover.svg" : "/arrow-left-circle.svg"} width={24} height={24} alt="Go back" />
-                            <span>Go back to Homepage</span>
-                        </div>
+                        <Link className="mt-16 text-white text-lg flex items-center hover:text-temporal" href={"/"}>
+                            <ArrowLeftCircleIcon className="mr-4 h-8 w-8" />
+                            Go back to homepage
+                        </Link>
                     </div>
 
                 </div>
@@ -132,8 +97,8 @@ const ThankYou: NextPage = () => {
 
                 </h2>
             </div>
-        </Layout>
-    </Fragment>)
+        </RootLayout>
+    )
 }
 
-export default ThankYou;
+export default Play;

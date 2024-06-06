@@ -1,5 +1,5 @@
+import { NextRequest, NextResponse } from 'next/server';
 import { google } from "googleapis";
-import type { NextApiRequest, NextApiResponse } from "next";
 import type { sheets_v4 } from "googleapis";
 
 interface SuccessResponse {
@@ -76,40 +76,30 @@ async function appendToSheet(
   return response.data;
 }
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<SuccessResponse | ErrorResponse>
-) => {
-  if (req.method !== "POST") {
-    res.setHeader("Allow", ["POST"]);
-    res.status(405).json({ message: `Method ${req.method ?? "UNKNOWN"} Not Allowed` });
-    return;
-  }
-
-  const { name, level, discordHandle, telegramHandle, company, email } = req.body as RequestBody;
-
-  if (!name || !level) {
-    res.status(400).json({ message: "Name and level are required." });
-    return;
-  }
-
-  if (level === 'Yield Farmer' && (!discordHandle || !telegramHandle)) {
-    res.status(400).json({ message: "Discord and Telegram handles are required for Yield Farmer." });
-    return;
-  }
-
-  if ((level === 'Professional Trader' || level === 'Institution / Ecosystem') && (!company || !email)) {
-    res.status(400).json({ message: "Company and Email are required for Professional Trader and Institution / Ecosystem." });
-    return;
-  }
-
+export async function POST(req: NextRequest) {
   try {
+    const { name, level, discordHandle, telegramHandle, company, email } = await req.json() as RequestBody;
+
+    if (!name || !level) {
+      return NextResponse.json({ message: "Name and level are required." }, { status: 400 });
+    }
+
+    if (level === 'Yield Farmer' && (!discordHandle || !telegramHandle)) {
+      return NextResponse.json({ message: "Discord and Telegram handles are required for Yield Farmer." }, { status: 400 });
+    }
+
+    if ((level === 'Professional Trader' || level === 'Institution / Ecosystem') && (!company || !email)) {
+      return NextResponse.json({ message: "Company and Email are required for Professional Trader and Institution / Ecosystem." }, { status: 400 });
+    }
+
     await appendToSheet({ name, level, discordHandle, telegramHandle, company, email });
-    res.status(200).json({ message: "Data added successfully" });
+    return NextResponse.json({ message: "Data added successfully" }, { status: 200 });
   } catch (error) {
     console.error("Error appending to the sheet:", error);
-    res.status(500).json({ message: "Failed to add data to the sheet" });
+    return NextResponse.json({ message: "Failed to add data to the sheet" }, { status: 500 });
   }
-};
+}
 
-export default handler;
+export const GET = () => {
+  return NextResponse.json({ message: `Method Not Allowed` }, { status: 405 });
+};
