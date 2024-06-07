@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <RootLayout>
         <div className="h-full"
           style={{
-            backgroundImage: `url('/Noise-BG.svg')`,
+            backgroundImage: `url('/Hourglass-BG.png')`,
             backgroundSize: 'cover',
             backgroundAttachment: "fixed",
           }}>

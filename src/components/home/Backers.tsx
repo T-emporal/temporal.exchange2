@@ -26,19 +26,19 @@ const Backers: NextPage = () => {
     //   </div>
     // </div>
 
-    <div className="sm:h-[15vh] w-full container mx-auto py-12 px-4 md:px-24 flex flex-col items-center">
+    <div className="sm:h-[10vh] w-full container mx-auto py-8 px-4 md:px-20 flex flex-col items-center">
       <div className="mt-4 gap-12 max-w-6xl flex flex-col md:flex-row justify-center ">
 
-        <Card className='rounded-none border-0 border-b-2 border-temporal bg-gray-800/20 backdrop-blur-[4px] py-10 md:p-4 flex justify-center items-center'>
-          <Image src="./Outlier_Ventures_Logo.svg" alt="Outlier Ventures Logo" width={250} height={100} />
+        <Card className='rounded-none border-0 border-b-2 border-temporal bg-gray-800/10  py-10 md:p-4 flex justify-center items-center'>
+          <Image src="./Outlier_Ventures_Logo.svg" alt="Outlier Ventures Logo" width={200} height={100} />
         </Card>
 
-        <Card className='rounded-none border-0 border-b-2 border-temporal bg-gray-800/20 backdrop-blur-[4px] p-4 flex justify-center items-center'>
-          <Image src="./Wormhole_Logo_Full.svg" alt="Wormhole Logo" width={250} height={100} />
+        <Card className='rounded-none border-0 border-b-2 border-temporal bg-gray-800/10  p-4 flex justify-center items-center'>
+          <Image src="./Wormhole_Logo_Full.svg" alt="Wormhole Logo" width={200} height={100} />
         </Card>
 
-        <Card className='rounded-none border-0 border-b-2 border-temporal bg-gray-800/20 backdrop-blur-[4px] py-6 md:p-4 flex justify-center items-center'>
-          <Image src="./Borderless_Logo.svg" alt="Borderless Logo" width={250} height={100} />
+        <Card className='rounded-none border-0 border-b-2 border-temporal bg-gray-800/10  py-6 md:p-4 flex justify-center items-center'>
+          <Image src="./Borderless_Logo.svg" alt="Borderless Logo" width={200} height={100} />
         </Card>
 
       </div>

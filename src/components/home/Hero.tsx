@@ -13,12 +13,12 @@ const linesOfText = [
 
 const Hero: NextPage = () => {
   return (
-    <div className="sm:h-[60vh] mt-20 md:mt-0 flex flex-col items-center justify-center">
-      <div className="mx-auto flex flex-col md:max-w-[70vw] md:flex-row">
+    <div className="sm:h-[60vh] mt-24 md:mt-10 flex flex-col items-center justify-center">
+      <div className="mx-auto flex flex-col  md:flex-row">
         <div className="md:text-center text-left">
 
-          <div className="mx-6 flex items-center justify-center min-w-[50vw]">
-            <h2 className=" text-6xl items-center text-white md:mx-0 lg:text-7xl">
+          <div className="flex items-center justify-center min-w-[50vw]">
+            <h2 className=" text-6xl items-center text-white  lg:text-8xl">
               <TextSwitcher texts={linesOfText} staticText="Defragmenting" interval={2000} />
             </h2>
           </div>
@@ -67,15 +67,14 @@ const Hero: NextPage = () => {
             />
           </h2> */}
 
-          <p className="mx-6 text-coffee font-light text-2xl mt-16 text-left md:text-center ">
+          <p className=" mx-auto text-coffee font-light text-2xl mt-16 text-center md:max-w-[60vw]">
             Patent-pending market infrastructure bringing unprecedented efficiencies to fixed-income and derivatives. Integrates with TradFi and DeFi market venues.
           </p>
         </div>
 
-
       </div>
-      <div className="mt-10 flex items-center justify-center md:flex-row md:space-x-4">
-        <Link href="/notify" className={buttonVariants({ variant: "cta" })}>Get Notified </Link>
+      <div>
+        <Link href="/notify" className={buttonVariants({ variant: "cta" })}>GET NOTIFIED </Link>
       </div>
     </div>
 

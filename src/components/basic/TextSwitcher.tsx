@@ -57,8 +57,8 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval
   };
 
   return (
-<div className={`flex flex-col items-center font-medium md:flex-row ${chakraPetch.className}`} ref={textContainerRef}> 
-  <span className="mr-4 mb-4 md:mb-0 text-coffee font-medium">{staticText}</span>
+<div className={`flex flex-col items-center md:flex-row ${chakraPetch.className}`} ref={textContainerRef}> 
+  <span className="mr-4 mb-4 md:mb-0 text-coffee">{staticText}</span>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -67,7 +67,7 @@ const TextSwitcher: React.FC<TextSwitcherProps> = ({ staticText, texts, interval
           animate="center"
           exit="exit"
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="text-temporal font-medium"
+          className="text-temporal"
         >
           {texts[currentIndex]}
         </motion.div>

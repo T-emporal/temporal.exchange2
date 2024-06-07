@@ -101,13 +101,13 @@ const Infrastructure: NextPage = () => {
                                         </div>
                                     </div>
 
-                                    <div className={`flex-1 flex items-center justify-center border border-gray-600 p-8`}>
+                                    <div className={`flex-1 flex items-center justify-center border border-gray-600 p-8 pb-0`}>
                                         <div className='max-w-xl'>
                                             <LottiePlayer
                                                 src="/LearnIntegrationPuzzle.lottie"
                                                 autoplay
                                                 loop
-                                                speed={1}
+                                                speed={1.5}
                                                 className=''
                                                 style={{ height: "auto", width: "100%" }}>
                                             </LottiePlayer>

@@ -85,7 +85,7 @@ export function CarouselCard() {
                 <div className={`flex-1 transition-opacity duration-300 ${fade ? 'opacity-100' : 'opacity-0'}`}>
                     <Image
                         alt={currentTab === "current" ? "Current Paradigm" : "Future Paradigm"}
-                        className=" border border-gray-600 p-8"
+                        className=""
                         src={content[currentTab].imageSrc}
                         width={800}
                         height={150}

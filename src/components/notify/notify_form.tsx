@@ -91,8 +91,8 @@ const NotifyForm: NextPage = () => {
 
     return (
         <>
-            <div className="text-center w-1/2 text-white">
-                <form className="space-y-6 mt-12" onSubmit={onSubmit}>
+            <div className="text-center w-1/2 text-coffee">
+                <form className="space-y-6 mt-16" onSubmit={onSubmit}>
                     <div className="flex-row md:flex gap-4 space-y-6 md:space-y-0">
                         <div className="flex-1">
                             <input
@@ -100,17 +100,17 @@ const NotifyForm: NextPage = () => {
                                 placeholder="Name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className=" flex-1 placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
+                                className=" flex-1 placeholder-coffee text-white border rounded-none bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
                             />
                         </div>
                         <div className="flex-1">
                             <Select onValueChange={handleLevelChange}>
-                                <SelectTrigger className="border rounded-xl bg-transparent border-temporal border-solid w-full py-6">
+                                <SelectTrigger className="border rounded-none bg-transparent border-temporal border-solid w-full py-6">
                                     <SelectValue className='px-3' placeholder="Select Level" />
                                 </SelectTrigger>
-                                <SelectContent className='bg-gray-400  p-3'>
+                                <SelectContent className='bg-zinc-800 rounded-none'>
                                     {levels.map((level) => (
-                                        <SelectItem key={level.name} value={level.value}>
+                                        <SelectItem className='rounded-none py-4' key={level.name} value={level.value}>
                                             {level.value}
                                         </SelectItem>
                                     ))}
@@ -133,7 +133,7 @@ const NotifyForm: NextPage = () => {
                                     placeholder="Telegram Handle"
                                     value={telegram}
                                     onChange={(e) => setTelegram(e.target.value)}
-                                    className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full mb-6 py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
+                                    className="placeholder-coffee text-white border rounded-none bg-transparent border-temporal border-solid w-full mb-6 py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
                                 />
                             </div>
                             <div className="flex-1">
@@ -142,7 +142,7 @@ const NotifyForm: NextPage = () => {
                                     placeholder="Discord Tag"
                                     value={discord}
                                     onChange={(e) => setDiscord(e.target.value)}
-                                    className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
+                                    className="placeholder-coffee text-white border rounded-none bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
                                 />
                             </div>
                         </motion.div>
@@ -161,7 +161,7 @@ const NotifyForm: NextPage = () => {
                                     placeholder="Company"
                                     value={company}
                                     onChange={(e) => setCompany(e.target.value)}
-                                    className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
+                                    className="placeholder-coffee text-white border rounded-none bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
                                 />
                             </div>
                             <div className="flex-1">
@@ -170,7 +170,7 @@ const NotifyForm: NextPage = () => {
                                     placeholder="Email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
+                                    className="placeholder-coffee text-white border rounded-none bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
                                 />
                             </div>
                         </motion.div>
@@ -181,7 +181,7 @@ const NotifyForm: NextPage = () => {
                         <button
                             type="submit"
                             disabled={isSubmitDisabled}
-                            className={`justify-center flex border-temporal bg-temporal ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-temporal/80 hover:bg-temporal/80'} text-black font-semibold py-3 px-6 rounded-xl relative`}
+                            className={`justify-center flex border-temporal bg-temporal ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-temporal/80 hover:bg-temporal/80'} text-black font-semibold py-3 px-6 rounded-md relative`}
                         >
                             Submit
                             {isLoading && (
