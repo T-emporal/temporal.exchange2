@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import LottiePlayer from '@/components/basic/LottiePlayer';
 
 const content = {
     current: {
@@ -15,6 +16,7 @@ const content = {
             "Pricing fixed income and derivatives of any duration. Deeper liquidity for all maturities.",
         ],
         imageSrc: "/LearnvAMMCurrent.min.svg",
+        lottieSrc: "/LearnvAMMCurrent.lottie",
     },
     future: {
         title: "Future Paradigm: ",
@@ -24,6 +26,7 @@ const content = {
             "Pricing fixed income and derivatives of any duration. Deeper liquidity for all maturities.",
         ],
         imageSrc: "/LearnvAMMFuture.min.svg",
+        lottieSrc: "/LearnvAMMFuture.lottie",
     }
 };
 
@@ -83,14 +86,22 @@ export function CarouselCard() {
                 </div>
 
                 <div className={`flex-1 transition-opacity duration-300 ${fade ? 'opacity-100' : 'opacity-0'}`}>
-                    <Image
+                    {/* <Image
                         alt={currentTab === "current" ? "Current Paradigm" : "Future Paradigm"}
                         className=""
                         src={content[currentTab].imageSrc}
                         width={800}
                         height={150}
                         priority
-                    />
+                    /> */}
+                    <LottiePlayer
+                        src={content[currentTab].lottieSrc}
+                        autoplay
+                        speed={1}
+                        loop={currentTab === "current" ? false : true}
+                        className=''
+                        style={{ height: "auto", width: "100%" }}>
+                    </LottiePlayer>
                 </div>
             </CardContent>
             <CardFooter className='text-lg md:text-xl text-center flex-col md:flex-row gap-4 items-center justify-center'>

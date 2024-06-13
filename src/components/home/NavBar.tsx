@@ -48,9 +48,8 @@ export default function NavBar() {
                         {menuItems.map((item) => (
                             <NavigationMenuItem key={item.id} className={` `}>
                                 <Link href={item.url} legacyBehavior passHref>
-                                    <NavigationMenuLink className={`flex group/${item.id} hover:text-temporal/70 text-xl items-center  ${currentPage === item.url ? 'text-temporal' : ''}`}>
+                                <NavigationMenuLink className={`flex ml-4 hover:text-temporal/70 text-lg items-center ${currentPage === item.url ? 'text-temporal currentNavItem' : ''}`}>
                                         {item.name}
-                                        <ArrowUpRight className={`ml-2 opacity-0 group-hover/${item.name}:opacity-100 transition-opacity duration-300`} />
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>

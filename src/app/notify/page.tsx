@@ -31,11 +31,11 @@ const Waitlist: NextPage = () => {
 
                         <div className={`flex  items-center text-center text-3xl md:text-4xl leading-[70px] mt-6 text-coffee ${chakraPetch.className}`}>
                             GET <span className="text-temporal ml-4"> NOTIFIED</span>
-                            <BellIcon className="ml-4 h-7 w-7 md:h-10 md:w-10" />
+                            <BellIcon className="ml-4 h-7 w-7 md:h-10 md:w-10 text-temporal" />
 
                         </div>
 
-                        <div className="text-center text-xl md:leading-[70px] mt-16 text-coffee">
+                        <div className="text-center text-xl md:leading-[70px] mt-4 text-coffee">
                             <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5">
                                 <div>
                                     <span className="text-temporal "> 1: </span> Leave your handle

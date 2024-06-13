@@ -101,7 +101,8 @@ const Infrastructure: NextPage = () => {
                                         </div>
                                     </div>
 
-                                    <div className={`flex-1 flex items-center justify-center border border-gray-600 p-8 pb-0`}>
+                                    {/* <div className={`flex-1 flex items-center justify-center border border-gray-600 p-8 pb-0`}> */}
+                                    <div className={`flex-1 flex items-center justify-center p-8 pb-0`}>
                                         <div className='max-w-xl'>
                                             <LottiePlayer
                                                 src="/LearnIntegrationPuzzle.lottie"
@@ -120,7 +121,68 @@ const Infrastructure: NextPage = () => {
                         </TabsContent>
 
 
-                        <TabsContent value="feeder_pool">
+                        <TabsContent value="feeder_pool" className=' '>
+                            <Card className='rounded-none border-0 border-temporal'
+                                style={{
+                                    backgroundImage: `url('/Noise-BG.svg')`,
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center',
+                                }}>
+                                {/* <Card className='rounded-none faded-border border-temporal bg-gray-800/20 backdrop-blur-[4px]'> */}
+                                <CardHeader className=' '>
+
+                                </CardHeader>
+                                <CardContent className="flex flex-col md:flex-row items-start md:items-center gap-8 mx-8 min-h-[60vh]">
+                                    <div className="flex flex-col flex-1 justify-between">
+                                        <div className={`mt-8 transition-opacity duration-300 opacity-100`}>
+                                            <CardTitle className='font-light text-temporal text-2xl mb-6'>
+                                                Feeder Pool:
+                                            </CardTitle>
+                                            <h2 className='text-md mb-8 font-normal text-gray-500'>
+                                                FEEDER POOL
+                                            </h2>
+                                            <ul className='list-none pl-0 text-xl font-light text-coffee'>
+                                                <li className='flex mb-8'>
+                                                    <ChevronRight size={40} className="text-temporal mr-2" />
+                                                    <span className="text-coffee">Channelling liquidity to Market Venues. Channelling liquidity to Market Venues.</span>
+                                                </li>
+                                                <li className='flex mb-8'>
+                                                    <ChevronRight size={40} className="text-temporal mr-2" />
+                                                    <span className="text-coffee">LPs simply select base asset. Feeder Pools manage allocation across dApps to optimize for rewards.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div className={`flex-1 flex items-center justify-center md:p-8`}>
+                                        <div className='max-w-xl'>
+                                            {/* <LottiePlayer
+                                                src="/LearnIntegrationPuzzle.lottie"
+                                                autoplay
+                                                loop
+                                                speed={1.5}
+                                                className=''
+                                                style={{ height: "auto", width: "100%" }}>
+                                            </LottiePlayer> */}
+                                            <Image
+                                            alt="Desktop Image"
+                                            src="/LearnFeederPool.min.svg"
+                                            height={150}
+                                            width={950}
+                                            className=""
+                                            priority
+                                        />
+                                        </div>
+                                    </div>
+                                </CardContent>
+                                <CardFooter className=''>
+                                </CardFooter>
+                            </Card>
+                        </TabsContent>
+
+
+                        {/* <TabsContent value="feeder_pool">
                             <Card className='rounded-none border-0 border-temporal px-8'
                                 style={{
                                     backgroundImage: `url('/Noise-BG.svg')`,
@@ -174,7 +236,7 @@ const Infrastructure: NextPage = () => {
                                 <CardFooter className='text-lg md:text-xl text-center flex items-center justify-center'>
                                 </CardFooter>
                             </Card>
-                        </TabsContent>
+                        </TabsContent> */}
                     </Tabs>
 
 

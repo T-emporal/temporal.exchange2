@@ -217,7 +217,49 @@
   font-weight: 700;
   font-style: italic;
 }
+/* NavBar */
 
+.currentNavItem {
+  position: relative;
+}
+
+.currentNavItem::before,
+.currentNavItem::after {
+  content: '';
+  position: absolute;
+  background-color: #00C1C1; /* Change this to your desired color */
+  animation: grow 0.5s forwards; /* Add animation */
+}
+
+.currentNavItem::before {
+  width: 0; /* Start with width 0 for animation */
+  height: 2px; /* Adjust the thickness of the line */
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.currentNavItem::after {
+  width: 0; /* Start with width 0 for animation */
+  height: 2px; /* Adjust the thickness of the line */
+  bottom: 0;
+  left: 0;
+  transform: translateY(50%);
+}
+
+@keyframes grow {
+  from {
+      width: 0;
+  }
+  to {
+      width: 30px; /* Adjust the final width of the line */
+  }
+}
+
+
+
+
+/* TETRIS */
 
 .tetris {
   display: grid;
